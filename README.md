@@ -1,14 +1,4 @@
-## Project Structure
 
-```bash
-shellScript/
-├── src/
-│   ├── shellScript/
-│   │   ├── SSLServer.java        # Java SSL Server
-│   │   └── SSLClient.java        # Java SSL Client
-├── server.jks                    # Java KeyStore for the server
-├── client.jks                    # Java KeyStore for the client
-└── README.md                     # Project documentation
 
 # SSL Server-Client Application with Java and KeyStore
 
@@ -58,11 +48,19 @@ Faça o mesmo com a classe do cliente: ajuste o caminho para o KeyStore do clien
 
 Com o servidor em execução, inicie o cliente e verifique se a conexão é estabelecida corretamente. Uma mensagem indicará se a comunicação segura foi configurada com sucesso.
 
-## Solução de Problemas
+## Estrutura do Projeto
 
-- **Erro de Caminho do Arquivo**: Certifique-se de que os arquivos JKS estão na localização correta e que o caminho especificado no código está correto.
-- **Erro de Senha**: Verifique se as senhas usadas no código são as mesmas definidas ao criar os KeyStores.
-
-## Licença
-
-Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+```bash
+shellScript/
+├── src/
+│   ├── shellScript/
+│   │   ├── SSLServer.java        # Java SSL Server
+│   │   └── SSLClient.java        # Java SSL Client
+├── resources/
+│   ├── gerar_certificado.bat     # Script para gerar certificados e chaves usando OpenSSL
+│   ├── server.crt                # Certificado do servidor
+│   ├── server.key                # Chave privada do servidor
+│   └── server.p12                # Arquivo PKCS12 do servidor
+├── server.jks                    # Java KeyStore para o servidor
+├── client.jks                    # Java KeyStore para o cliente
+└── README.md                     # Documentação do projeto
